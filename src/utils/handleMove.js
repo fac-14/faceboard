@@ -20,12 +20,10 @@ const handleMove = (position, board) => {
         newBoard[position] = null;
         history.push(newBoard);
         if (areArraysSame(newBoard,winningBoard)) {
-            console.log("YOU WIN");
             return { complete: true , board: newBoard };
         }
         return { board : newBoard };
     } else {
-        console.log("INVALID");
         return { board : newBoard };
     }
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import Board from "./Board";
 import handleMove from "../utils/handleMove";
+import scrambleBoard from "../utils/scrambleBoard";
 
 export default class Game extends React.Component {
     state = {
@@ -13,14 +14,20 @@ export default class Game extends React.Component {
         this.setState((prevState, props) => {
             return newState;
         });
-        console.log(this.state);
     };
+    scrambleBoard = () => {
+        var newBoard = scrambleBoard(this.state.board)
+        this.setState(() => {
+            return { board : newBoard }
+        })
+    }
     render() {
         return (
             <Board
                 board={this.state.board}
                 userMakesMove={this.userMakesMove}
                 complete={this.state.complete}
+                scramble={this.scrambleBoard}
             />
         );
     }

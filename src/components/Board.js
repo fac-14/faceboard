@@ -7,6 +7,7 @@ export default class Board extends React.Component {
     return (
       <React.Fragment>
          <h1>{winning ? "Ya Won" : "" }</h1> 
+         <button onClick={this.props.scramble}>Scramble</button>
         <div>
           <div className="row">
             <Slot
