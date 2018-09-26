@@ -19,15 +19,28 @@ const handleMove = (position, board) => {
         newBoard[emptySpace] = newBoard[position];
         newBoard[position] = null;
         history.push(newBoard);
-        if (newBoard === winningBoard) {
+        if (areArraysSame(newBoard,winningBoard)) {
             console.log("YOU WIN");
-            return "victory";
+            return { complete: true , board: newBoard };
         }
-        return newBoard;
+        return { board : newBoard };
     } else {
         console.log("INVALID");
-        return null;
+        return { board : newBoard };
     }
 };
+
+function areArraysSame(arr1, arr2) {
+    if (arr1.length === arr2.length) {
+        for (let i = 0 ; i < arr1.length ; i++) {
+            if (arr1[i] !== arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
 
 export default handleMove;

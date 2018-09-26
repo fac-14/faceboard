@@ -9,9 +9,9 @@ export default class Game extends React.Component {
     };
     userMakesMove = value => {
         const position = this.state.board.indexOf(value);
-        const newMove = handleMove(position, this.state.board);
+        const newState = handleMove(position, this.state.board);
         this.setState((prevState, props) => {
-            return { board: newMove };
+            return newState;
         });
         console.log(this.state);
     };
@@ -20,6 +20,7 @@ export default class Game extends React.Component {
             <Board
                 board={this.state.board}
                 userMakesMove={this.userMakesMove}
+                complete={this.state.complete}
             />
         );
     }
