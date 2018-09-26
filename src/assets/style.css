@@ -9,11 +9,17 @@ body {
 }
 
 .slot {
-    background-color: white;
     margin: 5px;
     height: 100px;
     width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.empty {
+    background-color: grey;
+}
+.occupied {
+    background-color: white;
 }

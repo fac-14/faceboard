@@ -1,9 +1,10 @@
 import React from "react";
 import Board from "./Board";
+import lookupMoves from '../utils/lookupMoves';
 
 export default class Game extends React.Component {
     state = {
-        board: [null, null, null, null, null, null, null, null, null],
+        board: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', null],
         slots: {
             box1: "A",
             box2: "B",
@@ -16,7 +17,11 @@ export default class Game extends React.Component {
             box9: null
         }
     };
+    userMakesMove = (value) => {
+        const position = this.state.board.indexOf(value);
+        console.log(position)
+    }
     render() {
-        return <Board board={this.state.board} slots={this.state.slots} />;
+        return <Board board={this.state.board} slots={this.state.slots} userMakesMove={this.userMakesMove}/>;
     }
 }
