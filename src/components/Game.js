@@ -10,7 +10,10 @@ export default class Game extends React.Component {
     userMakesMove = value => {
         const position = this.state.board.indexOf(value);
         const newMove = handleMove(position, this.state.board);
-        console.log(newMove);
+        this.setState((prevState, props) => {
+            return { board: newMove };
+        });
+        console.log(this.state);
     };
     render() {
         return (

@@ -20,10 +20,12 @@ const handleMove = (position, board) => {
         newBoard[position] = null;
         history.push(newBoard);
         if (newBoard === winningBoard) {
+            console.log("YOU WIN");
             return "victory";
         }
         return newBoard;
     } else {
+        console.log("INVALID");
         return null;
     }
 };
