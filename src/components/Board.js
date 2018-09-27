@@ -5,7 +5,13 @@ export default class Board extends React.Component {
     render() {
         const winning = this.props.complete;
         if (!this.props.avatarURL) {
-            // console.log(this.props);
+            return (
+                <h3>
+                    Add a github username to play.
+                </h3>
+            );
+        }
+        if (this.props.loading) {
             return (
                 <h3>
                     ...This loading screen brought to you by the Space4 WiFi
@@ -15,7 +21,8 @@ export default class Board extends React.Component {
         return (
             <React.Fragment>
                 <h1>{winning ? "Ya Won" : ""}</h1>
-                <button onClick={this.props.scramble}>Scramble</button>
+                
+                <div className="board">
                 <div className="border">
                     <div className="row">
                         <Slot
@@ -69,6 +76,8 @@ export default class Board extends React.Component {
                         />
                     </div>
                 </div>
+                </div>
+                <button id="scramble-btn" onClick={this.props.scramble}>Scramble</button>
             </React.Fragment>
         );
     }
