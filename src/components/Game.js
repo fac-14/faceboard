@@ -3,11 +3,13 @@ import Board from "./Board";
 import handleMove from "../utils/handleMove";
 import fetchGitImage from "../utils/fetchGitImage";
 import scrambleBoard from "../utils/scrambleBoard";
+import Form from "./Form";
 
 export default class Game extends React.Component {
     state = {
         complete: false,
-        board: ["A", "B", "C", "D", "E", "F", "G", "H", null]
+        board: ["A", "B", "C", "D", "E", "F", "G", "H", null],
+        input: 'developess'
     };
     userMakesMove = value => {
         const position = this.state.board.indexOf(value);
@@ -22,8 +24,21 @@ export default class Game extends React.Component {
             return { board: newBoard };
         });
     };
-    componentDidMount() {
-        const username = "developess";
+    // componentDidMount() {
+    //     const username = "developess";
+    //     fetchGitImage(username).then(res => {
+    //         this.setState(() => {
+    //             return { avatarURL: res.data.user.avatarUrl };
+    //         });
+    //     });
+    // }
+    handleFormChange = event => {
+        const value = event.target.value;
+        this.setState({ input: value });
+    };
+    handleFormSubmit = e => {
+        e.preventDefault();
+        const username = this.state.input;
         fetchGitImage(username).then(res => {
             this.setState(() => {
                 return { avatarURL: res.data.user.avatarUrl };
@@ -31,8 +46,14 @@ export default class Game extends React.Component {
         });
     }
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
+            <React.Fragment>
+            <Form 
+                handleFormChange={this.handleFormChange}
+                handleFormSubmit={this.handleFormSubmit}
+                input={this.state.input}
+            />    
             <Board
                 board={this.state.board}
                 avatarURL={this.state.avatarURL}
@@ -40,6 +61,7 @@ export default class Game extends React.Component {
                 complete={this.state.complete}
                 scramble={this.scrambleBoard}
             />
+            </React.Fragment>
         );
     }
 }

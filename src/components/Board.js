@@ -5,7 +5,7 @@ export default class Board extends React.Component {
     render() {
         const winning = this.props.complete;
         if (!this.props.avatarURL) {
-            console.log(this.props);
+            // console.log(this.props);
             return (
                 <h3>
                     ...This loading screen brought to you by the Space4 WiFi

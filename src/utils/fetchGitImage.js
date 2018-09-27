@@ -1,4 +1,5 @@
 import "whatwg-fetch";
+import token from "../../env";
 
 const fetchGitImage = username => {
     const query = {
@@ -6,7 +7,7 @@ const fetchGitImage = username => {
     };
 
     const headers = {
-        authorization: "bearer 3b400cdf4e2eababcbdc953dd6b5f55e6ceb5861",
+        authorization: "bearer " + token,
         "content-type": "application/json"
     };
 
