@@ -4,23 +4,23 @@
 
 ![](https://media.giphy.com/media/3ofT5J5ESXh8NTDcpG/giphy.gif)
 
-We wanted to make a game with React...
-
-... that also called an API via GraphQL
-... that we could also deploy on Netlify
-... that we could bundle with Parcel (*New & Shiny:tm:*)
-... that used loads of awesome modular components
-... that had integration tests with Jest
-
+We wanted to make a game with React...\
+\
+... that also called an API via GraphQL\
+... that we could also deploy on Netlify\
+... that we could bundle with Parcel (*New & Shiny:tm:*)\
+... that used loads of awesome modular components\
+... that had integration tests with Jest\
+\
 Like with everything in our lives, we looked back to our childhoods for simple games we could create in two days - and then remembered [those little slidey puzzle things that jumbled up a picture.](https://en.wikipedia.org/wiki/15_puzzle)
 
 ## Some of our favourite bits
 
-:tada: React
-:heart_eyes_cat: GraphQL fetch request 
-:8ball: The shuffle algorithm (Fisher Yates) is really cool and straightforward 
-:art: Using clip paths to create each square of the slider (perhaps not the most performant solution, but we figure at least the image gets cached)
-:necktie: Our valid moves mapping table is a really neat and tidy solution that makes sure players can't make an invalid move - we actually spent a while trying to create an algorithm that would handle this, but then realised this is actually a way easier to read solution that is no less performant. 
+:tada: React\
+:heart_eyes_cat: GraphQL fetch request\
+:8ball: The shuffle algorithm (Fisher Yates) is really cool and straightforward\
+:art: Using clip paths to create each square of the slider (perhaps not the most performant solution, but we figure at least the image gets cached)\
+:necktie: Our valid moves mapping table is a really neat and tidy solution that makes sure players can't make an invalid move - we actually spent a while trying to create an algorithm that would handle this, but then realised this is actually a way easier to read solution that is no less performant.\
 
 ## Day 1
 
@@ -30,7 +30,7 @@ Like with everything in our lives, we looked back to our childhoods for simple g
 
 Here's how our whiteboards looked at the end of day 1:
 
-![our day 1 progress](https://i.imgur.com/fneNRaL.jpg =250x)![more day 1 progress](https://i.imgur.com/oc0x8Sm.jpg =250x)
+![our day 1 progress](https://i.imgur.com/fneNRaL.jpg)![more day 1 progress](https://i.imgur.com/oc0x8Sm.jpg)
 
 ## Day 2
 
