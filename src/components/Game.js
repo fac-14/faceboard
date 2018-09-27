@@ -26,14 +26,6 @@ export default class Game extends React.Component {
       return { board: newBoard };
     });
   };
-  // componentDidMount() {
-  //     const username = "developess";
-  //     fetchGitImage(username).then(res => {
-  //         this.setState(() => {
-  //             return { avatarURL: res.data.user.avatarUrl };
-  //         });
-  //     });
-  // }
   handleFormChange = event => {
     const value = event.target.value;
     this.setState({ input: value });
@@ -49,7 +41,6 @@ export default class Game extends React.Component {
     });
   };
   render() {
-    // console.log(this.state);
     return (
       <React.Fragment>
         <Header />
