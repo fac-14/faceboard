@@ -1,5 +1,5 @@
 import React from "react";
-import slideImage from "../assets/abba.png";
+//import slideImage from "../assets/abba.png";
 
 export default class Slot extends React.Component {
     handleClick = () => {
@@ -12,7 +12,10 @@ export default class Slot extends React.Component {
             <React.Fragment>
                 {isNotEmpty ? (
                     <div className="slot occupied" onClick={this.handleClick}>
-                        <img src={slideImage} className={clipClasses} />
+                        <img
+                            src={this.props.avatarURL}
+                            className={clipClasses}
+                        />
                     </div>
                 ) : (
                     <div className="slot empty" />
