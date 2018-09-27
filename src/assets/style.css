@@ -1,3 +1,25 @@
 body {
     background-color: #ecf0f1;
 }
+
+.row {
+    display: flex;
+    background: black;
+    width: 330px;
+}
+
+.slot {
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty {
+    background-color: grey;
+}
+.occupied {
+    background-color: white;
+}
