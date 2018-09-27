@@ -1,25 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #ecf0f1;
+  background-color: #ecf0f1;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.header-div {
+  width: 100%;
+  background-color: rgb(255, 101, 30);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-div h1 {
+  margin: 0 60px;
+}
+
+main {
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+form {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 100px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+#form-btn {
+  background-color: rgb(115, 117, 250);
+}
+
+form input[type="text"] {
+  background: #ecf0f1;
+  border: none;
+  width: 200px;
+  margin: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.border {
+  border: 2.5px solid rgb(45, 45, 45);
+  box-shadow: 1px 1px 20px rgba(0,0,0,0.5);
+  width: 320px;
+  margin: 0;
+}
+
+#scramble-btn {
+  background-color: rgb(255, 101, 30);
+  margin-top: 20px;
 }
 
 .row {
-    display: flex;
-    background: black;
-    width: 330px;
+  display: flex;
+  background: rgb(45, 45, 45);
+  width: 315px;
 }
 
 .slot {
-    margin: 5px;
-    height: 100px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 2.5px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .empty {
-    background-color: grey;
+  background-color: whitesmoke;
+  box-shadow: inset 1px 1px 20px rgba(0,0,0,0.5);
 }
-.occupied {
-    background-color: white;
+
+.clip-image {
+  width: 310px;
+  height: 310px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.clip-A {
+  clip-path: polygon(0 0, 100px 0, 100px 100px, 0 100px);
+  top: 0;
+  left: 0;
+}
+
+.clip-B {
+  clip-path: polygon(105px 0, 205px 0, 205px 100px, 105px 100px);
+  top: 0;
+}
+
+.clip-C {
+  right: 0;
+  top: 0;
+  clip-path: polygon(210px 0, 310px 0, 310px 100px, 210px 100px);
+}
+
+.clip-D {
+  clip-path: polygon(0 105px, 100px 105px, 100px 205px, 0 205px);
+  left: 0;
+}
+
+.clip-E {
+  clip-path: polygon(105px 105px, 205px 105px, 205px 205px, 105px 205px);
+}
+
+.clip-F {
+  right: 0;
+  clip-path: polygon(210px 105px, 310px 105px, 310px 205px, 210px 205px);
+}
+
+.clip-G {
+  clip-path: polygon(0 210px, 100px 210px, 100px 310px, 0 310px);
+  left: 0;
+  bottom: 0;
+}
+
+.clip-H {
+  bottom: 0;
+  clip-path: polygon(105px 210px, 205px 210px, 205px 310px, 105px 310px);
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
 }
