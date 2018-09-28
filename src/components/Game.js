@@ -5,6 +5,7 @@ import fetchGitImage from "../utils/fetchGitImage";
 import scrambleBoard from "../utils/scrambleBoard";
 import Form from "./Form";
 import Header from "./Header";
+import abbaImg from "../assets/abba.png";
 
 export default class Game extends React.Component {
   state = {
@@ -36,6 +37,9 @@ export default class Game extends React.Component {
     const username = this.state.input;
     fetchGitImage(username).then(res => {
       this.setState(() => {
+        if (res.data.user === null) {
+          return { avatarURL: abbaImg, loading: false };
+        }
         return { avatarURL: res.data.user.avatarUrl, loading: false };
       });
     });
