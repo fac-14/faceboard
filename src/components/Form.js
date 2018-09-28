@@ -12,6 +12,7 @@ export default class Form extends React.Component {
             value={this.props.input}
             onChange={this.props.handleFormChange}
             autoComplete="off"
+            required
           />
         </div>
         <button id="form-btn" type="submit">Submit</button>
